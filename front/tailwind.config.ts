@@ -12,7 +12,7 @@ const config: Config = {
         
         background: "var(--background)",
         foreground: "var(--foreground)",
-        backgroundSecondary:"--background-secondary)",
+        backgroundSecondary:"var(--background-secondary)",
         captionLabel: "var(--caption-label)",
         White: "var(--text-white)",
         callAction : "var(--call-action)",
