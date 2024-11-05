@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #3B3B3B;
+  --foreground: #FFFFFF;
+  --background-secondary: #3B3B3B;
+  --caption-label: #858584;
+  --text-white: #FFFFFF;
+  --call-action : #A259FF;
+  --gradient-2: linear-gradient(90deg, #A259FF 0%, #377DF7 100%);
+  --gradient-3: linear-gradient(90deg, #A259FF 0%, #FF6250 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
