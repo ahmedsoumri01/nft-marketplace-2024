@@ -1,22 +1,14 @@
-import Button from "@/components/buttons/Button";
-
+import HeroSection from "@/components/home/HeroSection";
+import TrendingSection from "@/components/home/TrendingSection";
+import TopCreatorsSection from "@/components/home/TopCreatorsSection";
+import CategoriesSection from "@/components/home/CategoriesSection";
 export default function Home() {
   return (
     <>
-      {" "}
-      <Button
-        text="Click me"
-        icon="ArrowRight"
-        styleType="primary"
-        BtnStyle="simple"
-        extraClasses="w-full"
-      />
-      <Button
-        text="Click me1"
-        styleType="primary"
-        BtnStyle="inline"
-        icon="ArrowLeft"
-      />
+      <HeroSection />
+      <TrendingSection />
+      <TopCreatorsSection />
+      <CategoriesSection />
     </>
   );
 }
