@@ -4,6 +4,7 @@ import TopCreatorsSection from "@/components/home/topCreatorSection/TopCreatorsS
 import CategoriesSection from "@/components/home/categorieSection/CategoriesSection";
 import DiscoverSection from "@/components/home/discoverSection/DiscoverSection";
 import HighlightSection from "@/components/home/highlightSection/HighlightSection";
+import HowItWork from "@/components/home/howItWorkSection/HowItWork";
 export default function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Home() {
       <CategoriesSection />
       <DiscoverSection />
       <HighlightSection />
+      <HowItWork />
     </>
   );
 }
