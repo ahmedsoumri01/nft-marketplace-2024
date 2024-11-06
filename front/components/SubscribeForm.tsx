@@ -8,7 +8,7 @@ export default function SubscribeForm() {
     <input
       type="email"
       placeholder="Enter your email"
-      className="rounded-full p-2 h-[60px] w-full  text-black pr-8 focus:outline-none lg:rounded-lg"
+      className="rounded-full p-2 h-[60px] w-full  text-black pr-8 focus:outline-none lg:rounded-xl"
 
     />
     <Button
