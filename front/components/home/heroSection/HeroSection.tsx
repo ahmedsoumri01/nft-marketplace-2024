@@ -25,7 +25,7 @@ const highlightNft = {
 function HeroSection() {
   return (
     <div className="p-4 sm:p-12 md:min-h-screen md:flex md:items-center md:justify-center">
-      <div className="h-full w-full p-8">
+      <div className="h-full w-full p-2">
         <h1 className="font-black text-5xl my-4 lg:text-6xl">
           Discover digital art & Collect NFTs
         </h1>
@@ -42,9 +42,9 @@ function HeroSection() {
           styleType="secondary"
           BtnStyle="simple"
           icon="RocketLaunch"
-          extraClasses="w-fit justify-center md:w-auto"
-          /*  isLink={true}
-        href="/signup" */
+          extraClasses="w-full justify-center md:w-fit md:w-auto"
+          isLink={true}
+          href="/signup"
         />
 
         <StatisticHeroBar heroStatistics={heroStatistics} />
