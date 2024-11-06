@@ -16,7 +16,7 @@ const NavMenuItems = [
   },
   {
     text: "Connect a wallet",
-    href: "/connect-wallet",
+    href: "/connectwallet",
   },
 ];
 
@@ -30,6 +30,8 @@ const NavMenu = () => {
       </div>
       <div className="hidden mx-2 lg:block">
         <Button
+        isLink={true}
+        href="/signup"
           text="Sign Up"
           icon="User"
           styleType="tertiary"

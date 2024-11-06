@@ -34,17 +34,18 @@ function HeroSection() {
           art from more than 20k NFT artists.
         </h2>
         <div className="md:hidden flex justify-center w-full p-4">
-        <HighlightedNft nft={highlightNft} />
-      </div>
-        <div>
-          <Button
-            text="Get Started"
-            styleType="secondary"
-            BtnStyle="simple"
-            icon="RocketLaunch"
-            extraClasses="w-full justify-center md:w-auto"
-          />
+          <HighlightedNft nft={highlightNft} />
         </div>
+
+        <Button
+          text="Get Started"
+          styleType="secondary"
+          BtnStyle="simple"
+          icon="RocketLaunch"
+          extraClasses="w-fit justify-center md:w-auto"
+          /*  isLink={true}
+        href="/signup" */
+        />
 
         <StatisticHeroBar heroStatistics={heroStatistics} />
       </div>

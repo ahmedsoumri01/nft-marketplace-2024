@@ -1,38 +1,102 @@
 // components/Button.tsx
 import React from "react";
 import Icon from "@/components/Icons";
-
+import Link from "next/link";
 type ButtonProps = {
+  isLink?: boolean;
+  href?: string;
   text: string;
   styleType?: "primary" | "secondary" | "tertiary";
   BtnStyle: "inline" | "simple";
-  icon?: "ArrowLeft" | "ArrowRight" | "Basketball" | "BookmarksSimple" | "Camera" | "CoinBase" | "Copy" | "DiscordLogo" | "EnvelopeSimple" | "Eye" | "EyeSlash" | "Globe" | "InstagramLogo" | "List" | "LockKey" | "MagicWand" | "MagnifyingGlass" | "Metamask" | "MusicNotes" | "PaintBrush" | "Planet" | "Plus" | "Rocket" | "RocketLaunch" | "Storefront" | "Swatches" | "TrendUp" | "TwitterLogo" | "User" | "UserCircle" | "VideoCamera" | "Wallet" | "WalletConnect" | "YoutubeLogo";
+  hoverType?: "default" | "inlined";
+  icon?:
+    | "ArrowLeft"
+    | "ArrowRight"
+    | "Basketball"
+    | "BookmarksSimple"
+    | "Camera"
+    | "CoinBase"
+    | "Copy"
+    | "DiscordLogo"
+    | "EnvelopeSimple"
+    | "Eye"
+    | "EyeSlash"
+    | "Globe"
+    | "InstagramLogo"
+    | "List"
+    | "LockKey"
+    | "MagicWand"
+    | "MagnifyingGlass"
+    | "Metamask"
+    | "MusicNotes"
+    | "PaintBrush"
+    | "Planet"
+    | "Plus"
+    | "Rocket"
+    | "RocketLaunch"
+    | "Storefront"
+    | "Swatches"
+    | "TrendUp"
+    | "TwitterLogo"
+    | "User"
+    | "UserCircle"
+    | "VideoCamera"
+    | "Wallet"
+    | "WalletConnect"
+    | "YoutubeLogo";
   extraClasses?: string;
 };
 
 export default function Button({
+  isLink = false,
+  href = "/",
   text,
   styleType = "primary",
   BtnStyle = "simple",
   icon,
   extraClasses = "",
+  hoverType = "default",
 }: ButtonProps) {
   return (
-    <button
-      className={`p-4 my-2 flex items-center gap-2 ${
-        BtnStyle === "inline"
-          ? "rounded-lg bg-transparent border-2 border-callAction hover:bg-callAction hover:text-white transition-all ease-in-out duration-300"
-          : "rounded-lg bg-callAction hover:bg-transparent hover:border-2 border-callAction text-white transition-all ease-in-out duration-300"
-      } ${
-        styleType === "primary"
-          ? "h-[72px]"
-          : styleType === "secondary"
-          ? "h-[60px]"
-          : "h-[46px]"
-      }  ${extraClasses}`}
-    >
-      {icon && <Icon name={icon} alt={text} width={24} height={24} />}
-      {text}
-    </button>
+    <div>
+      {isLink ? (
+        <Link
+          href={href}
+          className={`p-4 my-2 flex items-center gap-2 ${
+            BtnStyle === "inline"
+              ? "rounded-lg bg-transparent border-2 border-callAction hover:bg-callAction hover:text-white transition-all ease-in-out duration-300"
+              : `rounded-lg bg-callAction border-callAction text-white transition-all ease-in-out duration-300 ${hoverType === "inlined" ? "" : " hover:bg-transparent hover:border-2"}`
+          } ${
+            styleType === "primary"
+              ? "h-[72px]"
+              : styleType === "secondary"
+              ? "h-[60px]"
+              : "h-[46px]"
+          }  ${extraClasses}`}
+        >
+          {icon && <Icon name={icon} alt={text} width={24} height={24} />}
+          {text}
+        </Link>
+      ) : (
+        <>
+          <button
+            className={`p-4 my-2 flex items-center gap-2 ${
+              BtnStyle === "inline"
+                ? "rounded-lg bg-transparent border-2 border-callAction hover:bg-callAction hover:text-white transition-all ease-in-out duration-300"
+                : "rounded-lg bg-callAction hover:bg-transparent hover:border-2 border-callAction text-white transition-all ease-in-out duration-300"
+            } ${
+              styleType === "primary"
+                ? "h-[72px]"
+                : styleType === "secondary"
+                ? "h-[60px]"
+                : "h-[46px]"
+            }  ${extraClasses}`}
+          >
+            {icon && <Icon name={icon} alt={text} width={24} height={24} />}
+            {text}
+          </button>
+        </>
+      )}
+    </div>
   );
 }
