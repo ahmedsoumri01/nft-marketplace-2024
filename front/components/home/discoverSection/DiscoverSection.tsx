@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "@/components/home/SectionTitle";
-import NftCard from "@/components/home/NftCard";
+import NftCard from "@/components/home/discoverSection/NftCard";
 
 const DiscoveredNFTs = [
   {

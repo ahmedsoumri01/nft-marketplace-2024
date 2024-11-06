@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "@/components/home/SectionTitle";
-import CategorieItem from "@/components/home/CategorieItem";
+import CategorieItem from "@/components/home/categorieSection/CategorieItem";
 const categoriesArray = [
   {
     categorieName: "Art",

@@ -19,17 +19,17 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`rounded-lg p-4 my-2 flex items-center gap-2 ${
+      className={`p-4 my-2 flex items-center gap-2 ${
         BtnStyle === "inline"
-          ? "bg-transparent border-2 border-callAction hover:bg-callAction hover:text-white transition-all ease-in-out duration-300"
-          : "bg-callAction hover:bg-transparent hover:border-2 border-callAction text-white transition-all ease-in-out duration-300"
+          ? "rounded-lg bg-transparent border-2 border-callAction hover:bg-callAction hover:text-white transition-all ease-in-out duration-300"
+          : "rounded-lg bg-callAction hover:bg-transparent hover:border-2 border-callAction text-white transition-all ease-in-out duration-300"
       } ${
         styleType === "primary"
           ? "h-[72px]"
           : styleType === "secondary"
           ? "h-[60px]"
           : "h-[46px]"
-      } ${extraClasses}`}
+      }  ${extraClasses}`}
     >
       {icon && <Icon name={icon} alt={text} width={24} height={24} />}
       {text}

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@/components/buttons/Button";
 import StatisticHeroBar from "@/components/StatisticHeroBar";
-import HighlightedNft from "@/components/home/HighlightedNft";
+import HighlightedNft from "@/components/home/heroSection/HighlightedNft";
 const heroStatistics = [
   {
     title: "Total Sale",

@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "@/components/home/SectionTitle";
-import CreatorItem from "@/components/home/CreatorItem";
+import CreatorItem from "@/components/home/topCreatorSection/CreatorItem";
 const creatorsArray = [
   {
     creatorImage: "/assets/images/Avatar1.png",
