@@ -6,7 +6,6 @@ type Props = {
     title: string;
     image: string;
     owner: string;
-     
   };
 };
 
@@ -23,15 +22,16 @@ function HighlightedNft({ nft }: Props) {
 
       <div className="p-4 rounded-b-lg bg-backgroundSecondary w-full max-w-auto md:max-w-[310px] lg:max-w-[510px]">
         <h3 className="font-bold text-xl">{nft.title}</h3>
-        <p className="text-lg flex items-center gap-3 mt-4">
+        <div className="text-lg flex items-center gap-3 mt-4">
           <Avatar
             src={"/assets/images/placeholders/ImagePlaceholder(4).png"}
             alt={nft.owner}
             size="small"
             className="inline-block"
           />
-          {nft.owner}
-        </p>
+          <p>{nft.owner}</p>
+        </div>
+        <p className="text-lg flex items-center gap-3 mt-4">{nft.owner}</p>
       </div>
     </div>
   );

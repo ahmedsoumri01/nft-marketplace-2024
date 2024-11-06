@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 type Props = {
   src: string;
   alt: string;
@@ -10,7 +10,9 @@ type Props = {
 const Avatar = (props: Props) => {
   return (
     <div>
-      <img
+      <Image
+      width={200}
+      height={200}
         src={props.src || "/assets/images/Avatar#1.png"}
         alt={props.alt}
         className={`rounded-full ${
