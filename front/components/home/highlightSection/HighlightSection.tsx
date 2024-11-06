@@ -7,13 +7,14 @@ const nftHighlight = {
   creatorName: "John Doe",
   creatorAvatar: "/assets/images/avatar1.png",
   nftName: "Magic Mushrooms",
+  NFTImage: "/assets/images/ScreenTablet.png",
   nftLink: "/nft/1",
   auctionEndTime: "2024-12-31T23:59:59Z",
 };
 
 export default function HighlightSection() {
   return (
-    <div className="relative min-h-screen bg-[url('/assets/images/ScreenTablet.png')] bg-no-repeat bg-cover">
+    <div className={`relative min-h-screen bg-[url('/assets/images/ScreenTablet.png')] bg-no-repeat bg-cover`}>
       {/* Blurred overlay with purple gradient shadow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-600 opacity-80 backdrop-blur-sm"></div>
 
