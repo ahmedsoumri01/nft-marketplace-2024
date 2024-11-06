@@ -73,7 +73,7 @@ function DiscoverSection() {
   const randomNFTs = shuffleArray([...DiscoveredNFTs]).slice(0, 3);
 
   return (
-    <div className="min-h-screen container mx-auto p-12">
+    <div className="min-h-screen container mx-auto p-6 sm:p-8">
       <SectionTitle
         title="Discover More NFTs"
         description="Explore new trending NFTs"

@@ -24,7 +24,7 @@ const SectionTitle = ({
       {sectionStyle === "withBtn" ? (
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="font-black text-5xl">{title}</h2>
+            <h2 className="font-black text-3xl md:text-4xl lg:text-5xl">{title}</h2>
             <p className="text-lg">{description}</p>
           </div>
           <div>

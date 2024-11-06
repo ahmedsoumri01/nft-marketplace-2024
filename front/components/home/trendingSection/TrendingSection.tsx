@@ -75,7 +75,7 @@ const TrendingCollectionsArray = [
 ];
 function TrendingSection() {
   return (
-    <div className="min-h-screen container mx-auto p-4">
+    <div className="min-h-screen container mx-auto p-8">
       <SectionTitle
         title="Trending NFTs"
         description="Discover the most popular NFTs on the market"

@@ -20,7 +20,7 @@ const howItWorkArray = [
 ];
 export default function HowItWork() {
   return (
-    <div className="min-h-screen container mx-auto p-12">
+    <div className="min-h-screen container mx-auto p-9">
       <SectionTitle
         title="How it works"
         description="Find out how to get started"
@@ -28,7 +28,7 @@ export default function HowItWork() {
       />
         <div className="grid w-full grid-cols-1 md:grid-cols-3 justify-items-stretch gap-9 mt-8">
         {howItWorkArray.map((howItWork, index) => (
-          <div key={index}>
+          <div key={index} className="h-full">
             <HowWorkItem
               image={howItWork.image}
               title={howItWork.title}

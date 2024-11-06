@@ -45,7 +45,7 @@ const creatorsArray = [
 ];
 function TopCreatorsSection() {
   return (
-    <div className="min-h-screen container mx-auto p-4">
+    <div className="min-h-screen container mx-auto p-8">
       <SectionTitle
         title="Top creators"
         description="Checkout Top Rated Creators on the NFT Marketplace"

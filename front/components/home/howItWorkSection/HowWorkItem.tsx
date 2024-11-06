@@ -8,19 +8,19 @@ type Props = {
 
 export default function HowWorkItem({ image, title, description }: Props) {
   return (
-    <div className="flex items-center bg-backgroundSecondary transition-all ease-in-out duration-300 p-4 rounded-xl text-center md:block md:min-h-[560px] object-fill cursor-pointer hover:bg-callAction">
-      <div>
+    <div className="flex items-center bg-backgroundSecondary transition-all ease-in-out duration-300 p-4 rounded-xl text-center md:block object-fill cursor-pointer hover:bg-callAction h-full">
+      <div className="flex justify-center items-center">
         <Image
           width={200}
           height={200}
           src={image}
           alt={title}
-          className="w-96 rounded-t-xl"
+          className="min-w-[100px] w-64 rounded-full"
         />
       </div>
      <div>
-     <h1 className="my-2 text-2xl font-bold">{title}</h1>
-     <p className="text-lg">{description}</p>
+     <h1 className="my-2 text-xl font-bold text-start sm:text-2xl md:text-center">{title}</h1>
+     <p className="text-sm text-start  sm:text-lg md:text-center">{description}</p>
      </div>
     </div>
   );

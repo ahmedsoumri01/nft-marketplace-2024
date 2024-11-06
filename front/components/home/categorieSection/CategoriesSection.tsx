@@ -46,7 +46,7 @@ const categoriesArray = [
 
 function CategoriesSection() {
   return (
-    <div className="min-h-screen container mx-auto p-12">
+    <div className="min-h-screen container mx-auto p-10">
       <SectionTitle
         title="Browse Categories"
         description=""
