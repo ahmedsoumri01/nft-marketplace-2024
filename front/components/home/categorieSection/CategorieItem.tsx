@@ -11,7 +11,7 @@ export default function CategorieItem({
   categorieCoverImage,
   categorieName,
   categorieIcon,
-}: Props) {
+}: Readonly<Props>) {
   return (
     <div className="rounded-xl overflow-hidden cursor-pointer group">
       <div className="relative group">

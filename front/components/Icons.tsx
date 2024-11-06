@@ -6,6 +6,7 @@ type IconProps = {
   alt?: string;
   width?: number;
   height?: number;
+  extraClasses?: string;
 };
 
 const icons: Record<IconProps["name"], string> = {
@@ -49,7 +50,8 @@ export default function Icon({
   name,
   alt = "",
   width = 24,
+  extraClasses = "",
   height = 24,
 }: IconProps) {
-  return <Image src={icons[name]} alt={alt} width={width} height={height} />;
+  return <Image className={extraClasses} src={icons[name]} alt={alt} width={width} height={height} />;
 }

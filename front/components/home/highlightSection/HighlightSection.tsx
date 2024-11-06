@@ -20,7 +20,7 @@ export default function HighlightSection() {
       {/* Blurred overlay with purple gradient shadow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-600 opacity-80 backdrop-blur-sm"></div>
 
-      <div className="container relative mx-auto p-12 flex items-center justify-between min-h-screen">
+      <div className="container relative mx-auto p-4 flex items-center justify-between min-h-screen">
         <div className="container mx-auto items-end justify-between md:flex lg:p-12">
           <div>
             <div className="bg-background flex items-center rounded-full px-4 py-2 gap-4 my-4 w-fit">

@@ -36,9 +36,9 @@ export default function AuctionTimer({ auctionEndTime }: Props) {
   }, [auctionEndTime]);
 
   return (
-    <div className="p-4 rounded-xl bg-background max-w-[300px]">
+    <div className="p-4 rounded-xl bg-background min-w-[300px] text-center">
       <p>Auction ends in:</p>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center justify-center gap-2">
         {/* Days */}
         <div className="flex flex-col items-center gap-1">
           <p className="text-2xl font-bold">{String(timeLeft.days).padStart(2, "0")}</p>

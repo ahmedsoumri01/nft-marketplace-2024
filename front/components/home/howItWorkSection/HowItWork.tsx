@@ -20,7 +20,7 @@ const howItWorkArray = [
 ];
 export default function HowItWork() {
   return (
-    <div className="min-h-screen container mx-auto p-9">
+    <div className="container mx-auto p-9">
       <SectionTitle
         title="How it works"
         description="Find out how to get started"
