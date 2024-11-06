@@ -6,6 +6,7 @@ import DiscoverSection from "@/components/home/discoverSection/DiscoverSection";
 import HighlightSection from "@/components/home/highlightSection/HighlightSection";
 import HowItWork from "@/components/home/howItWorkSection/HowItWork";
 import SubscribeWidgetSection from "@/components/home/subscribeWidget/SubscribeWidgetSection";
+
 export default function Home() {
   return (
     <>
