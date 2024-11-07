@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Icon from "@/components/Icons";
+import { FaStore } from "react-icons/fa";
 type Props = {
   title: string;
   customTitleStyle?: string;
@@ -9,7 +10,7 @@ type Props = {
 const Logo = ({ title, customTitleStyle }: Props) => {
   return (
     <Link href={"/"} className="flex items-center gap-3 font-bold">
-      <Icon name="Storefront" alt="home" width={24} height={24} />
+      <Icon icon={<FaStore />} />
       <p className={customTitleStyle}>{title}</p>
     </Link>
   );
