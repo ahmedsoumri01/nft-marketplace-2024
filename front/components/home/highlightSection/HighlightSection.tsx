@@ -1,5 +1,5 @@
 import React from "react";
-import AuctionTimer from "./AuctionTimer";
+import AuctionTimer from "../AuctionTimer";
 import Avatar from "@/components/Avatar";
 import Button from "@/components/buttons/Button";
 import { FaRegEye } from "react-icons/fa"; 
