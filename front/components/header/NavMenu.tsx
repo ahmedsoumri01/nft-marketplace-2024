@@ -28,14 +28,26 @@ const NavMenu = () => {
           <NavMenuItem key={index} href={item.href} text={item.text} />
         ))}
       </div>
+    
       <div className="hidden mx-2 lg:block">
         <Button
-        isLink={true}
-        href="/signup"
-          text="Sign Up"
+          isLink={true}
+          href="/login"
+          text="login"
           icon="User"
           styleType="tertiary"
           BtnStyle="simple"
+          extraClasses="w-full font-bold"
+        />
+      </div>
+      <div className="hidden mx-2 lg:block">
+        <Button
+          isLink={true}
+          href="/signup"
+          text="Sign Up"
+          icon="User"
+          styleType="tertiary"
+          BtnStyle="inline"
           extraClasses="w-full font-bold"
         />
       </div>
