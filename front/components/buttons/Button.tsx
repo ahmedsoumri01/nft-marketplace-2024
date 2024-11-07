@@ -25,7 +25,7 @@ export default function Button({
   hoverType = "default",
 }: ButtonProps) {
   return (
-    <div className="w-full">
+    <div>
       {isLink ? (
         <Link
           href={href}
