@@ -51,7 +51,7 @@ const NavMenu = () => {
           extraClasses="w-full font-bold"
         />
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden z-50">
         <MobileNavMenu NavMenuItems={NavMenuItems} />
       </div>
     </div>

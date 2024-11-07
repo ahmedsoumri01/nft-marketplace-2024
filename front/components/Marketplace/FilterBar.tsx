@@ -1,9 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
-export default function FilterBar() {
-  const [selected, setSelected] = useState("NFTs");
-
+type props = {
+  selected: string;
+  setSelected: (value: string) => void;
+  collectionsCount: number;
+  nftsCount: number;
+};
+export default function FilterBar({ selected, setSelected,
+  collectionsCount, nftsCount
+ }: props) {
   const handleClick = (value: string) => {
     setSelected(value);
   };
@@ -30,7 +36,9 @@ export default function FilterBar() {
         } flex justify-center gap-4 items-center w-full p-2 font-bold text-lg cursor-pointer text-captionLabel hover:text-callAction`}
       >
         <p>NFTs</p>
-        <p className="bg-captionLabel px-3 rounded-full text-sm text-white hover:text-white">302</p>
+        <p className="bg-captionLabel px-3 rounded-full text-sm text-white hover:text-white">
+           {nftsCount}
+        </p>
       </button>
       <button
         onClick={() => handleClick("Collections")}
@@ -39,8 +47,9 @@ export default function FilterBar() {
         } flex justify-center gap-4 items-center  w-full p-2 font-bold text-lg cursor-pointer text-captionLabel hover:text-callAction`}
       >
         <p>Collections</p>
-        <p className="bg-captionLabel px-3 rounded-full text-sm text-white hover:text-white">67</p>
-
+        <p className="bg-captionLabel px-3 rounded-full text-sm text-white hover:text-white">
+          {collectionsCount}
+        </p>
       </button>
 
       {/* Bottom bar indicator */}

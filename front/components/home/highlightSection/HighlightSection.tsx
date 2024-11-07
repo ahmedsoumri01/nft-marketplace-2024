@@ -38,6 +38,8 @@ export default function HighlightSection() {
           </div>
             <Button
               styleType="primary"
+               isLink={true}
+            href="/nft/76576GG87676D76C76D5C79S87C68S7C6"
               BtnStyle="simple"
               icon="Eye"
               text="See NFT"

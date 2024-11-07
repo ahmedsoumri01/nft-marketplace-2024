@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Avatar from "@/components/Avatar";
+import Link from "next/link";
 type Props = {
   images: string[];
   ownerName: string;
@@ -47,10 +48,12 @@ function TrendingCollectionCard({
       </div>
       <div>
         <h3 className="font-bold text-xl">{collectionName}</h3>
-        <div className="flex items-center gap-4 my-4">
+        <Link href="/artist/76576GG87676D76C76D5C79S87C68S7C6">
+        <div className="flex items-center gap-4 my-4 hover:text-callAction">
           <Avatar src={ownerImage} alt="Owner img" size="small" />
           <p>{ownerName}</p>
         </div>
+        </Link>
       </div>
     </div>
   );

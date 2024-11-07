@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "@/components/home/SectionTitle";
-import TrendingCollectionCard from "./TrendingCollectionCard";
+import TrendingCollectionCard from "../TrendingCollectionCard";
 const TrendingCollectionsArray = [
   {
     ownerName: "MrFox",

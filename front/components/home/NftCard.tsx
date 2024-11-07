@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Avatar from "@/components/Avatar";
 import Button from "../buttons/Button";
+import Link from "next/link";
 type Props = {
   nftImage: string;
   nftName: string;
@@ -20,8 +21,8 @@ export default function NftCard({
   hiestBid,
 }: Props) {
   return (
-    <div className="group transition-all ease-in-out duration-300 cursor-pointer">
-      <div className="relative">
+    <div className="group transition-all ease-in-out duration-300">
+      <div className="relative group">
         <Image
           width={200}
           height={200}
@@ -32,7 +33,7 @@ export default function NftCard({
         <div className="hidden absolute inset-0 group-hover:flex items-center justify-center bg-black bg-opacity-50 rounded-t-xl group-hover:bg-opacity-0">
           <Button
             isLink={true}
-            href="/marketplace/nft"
+            href="/nft/76576GG87676D76C76D5C79S87C68S7C6"
             text="Details"
             styleType="secondary"
             BtnStyle="simple"
@@ -43,11 +44,12 @@ export default function NftCard({
       </div>
       <div className="p-4 px-6 bg-backgroundSecondary  transition-all ease-in-out duration-300   rounded-b-xl group-hover:bg-callAction">
         <h3 className="my-2 text-xl font-bold">{nftName}</h3>
-
-        <div className="flex items-center gap-2 my-2">
-          <Avatar src={nftOwnerAvatar} alt={nftOwner} size="small" />
-          <p>{nftOwner}</p>
-        </div>
+        <Link href="/artist/76576GG87676D76C76D5C79S87C68S7C6">
+          <div className="flex items-center gap-2 my-2">
+            <Avatar src={nftOwnerAvatar} alt={nftOwner} size="small" />
+            <p>{nftOwner}</p>
+          </div>
+        </Link>
         <div className="flex justify-between items-center pt-2 my-2">
           <div>
             <p className="text-sm text-captionLabel group-hover:text-white  transition-all ease-in-out duration-300 ">
