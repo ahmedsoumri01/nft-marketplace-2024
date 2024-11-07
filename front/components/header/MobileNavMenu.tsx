@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Icon from "@/components/Icons";
 import { IoClose } from "react-icons/io5";
 import MobileNavItem from "./MobileNavItem";
+import Button from "@/components/buttons/Button";
+
 // props
 type Props = {
   NavMenuItems: Array<{ text: string; href: string }>;
@@ -54,6 +56,27 @@ const MobileNavMenu = ({ NavMenuItems }: Props) => {
                 ))}
               </ul>
             </nav>
+            <div>
+            <Button
+          isLink={true}
+          href="/login"
+          text="login"
+          icon="User"
+          styleType="tertiary"
+          BtnStyle="simple"
+          extraClasses="w-full font-bold hover:text-black"
+        />
+         <Button
+          isLink={true}
+          href="/signup"
+          text="Sign Up"
+          icon="User"
+          styleType="tertiary"
+          BtnStyle="inline"
+          extraClasses="w-full font-bold text-black"
+        />
+
+            </div>
           </div>
         </div>
       )}

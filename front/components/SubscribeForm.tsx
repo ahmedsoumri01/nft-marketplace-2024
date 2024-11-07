@@ -14,7 +14,7 @@ export default function SubscribeForm() {
     <Button
       text="Subscribe"
       styleType="secondary"
-      extraClasses="rounded-lg w-full font-bold  flex items-center justify-center !rounded-full lg:-ml-8 lg:w-[200px]"
+      extraClasses="rounded-lg w-full font-bold  flex items-center justify-center !rounded-full hover:!bg-[#6d39b0] lg:-ml-8 lg:w-[200px]"
       BtnStyle="simple"
       icon="EnvelopeSimple"
     />
