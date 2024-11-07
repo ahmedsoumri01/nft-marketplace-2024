@@ -3,11 +3,15 @@ import Logo from "@/components/header/Logo";
 import Icon from "../Icons";
 import SubscribeForm from "../SubscribeForm";
 import CopyRight from "./CopyRight";
+import { CiTwitter } from "react-icons/ci";
+import { CiYoutube } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { AiOutlineDiscord } from "react-icons/ai";
 import Link from "next/link";
 const Footer = () => {
   return (
     <div className="container px-4 mx-auto py-14">
-      <div className="lg:flex items-start justify-around gap-4">
+      <div className="lg:flex items-start justify-around gap-4 py-14">
         <div className="py-3 sm:flex items-start justify-around gap-12 lg:p-0">
           {" "}
           <div className="h-full">
@@ -23,13 +27,22 @@ const Footer = () => {
             <div className="py-3">
               <p className="text-captionLabel"> Join our community</p>
               <div className="flex gap-6 py-2">
-                <Icon name="TwitterLogo" extraClasses={"w-10 cursor-pointer"} />
                 <Icon
-                  name="InstagramLogo"
-                  extraClasses={"w-10 cursor-pointer"}
+                  icon={<CiTwitter />}
+                  extraClasses={"cursor-pointer"}
                 />
-                <Icon name="DiscordLogo" extraClasses={"w-10 cursor-pointer"} />
-                <Icon name="YoutubeLogo" extraClasses={"w-10 cursor-pointer"} />
+                <Icon
+                  icon={<CiInstagram />}
+                  extraClasses={"cursor-pointer"}
+                />
+                <Icon
+                  icon={<AiOutlineDiscord />}
+                  extraClasses={"cursor-pointer"}
+                />
+                <Icon
+                  icon={<CiYoutube />}
+                  extraClasses={"cursor-pointer"}
+                />
               </div>
             </div>
           </div>
@@ -37,13 +50,28 @@ const Footer = () => {
             <h3 className="font-bold text-2xl">Explore</h3>
             <ul className="pt-2">
               <li className="text-captionLabel text-lg py-2">
-                <Link href="/marketplace" className="transition-all ease-in-out duration-200 hover:text-callAction">Marketplace</Link>
+                <Link
+                  href="/marketplace"
+                  className="transition-all ease-in-out duration-200 hover:text-callAction"
+                >
+                  Marketplace
+                </Link>
               </li>
               <li className="text-captionLabel text-lg">
-                <Link href="/Rankings" className="transition-all ease-in-out duration-200 hover:text-callAction">Rankings</Link>
+                <Link
+                  href="/Rankings"
+                  className="transition-all ease-in-out duration-200 hover:text-callAction"
+                >
+                  Rankings
+                </Link>
               </li>
               <li className="text-captionLabel text-lg">
-                <Link href="/create" className="transition-all ease-in-out duration-200 hover:text-callAction">Connect a wallet</Link>
+                <Link
+                  href="/create"
+                  className="transition-all ease-in-out duration-200 hover:text-callAction"
+                >
+                  Connect a wallet
+                </Link>
               </li>
             </ul>
           </div>

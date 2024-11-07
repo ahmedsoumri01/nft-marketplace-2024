@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTitle from "@/components/home/SectionTitle";
 import NftCard from "@/components/home/NftCard";
-
+import { FaRegEye } from "react-icons/fa";
 const DiscoveredNFTs = [
   {
     nftImage: "/assets/images/placeholders/ImagePlaceholder(1).png",
@@ -81,7 +81,7 @@ function DiscoverSection() {
         buttonProps={{
           text: "See All",
           styleType: "secondary",
-          icon: "Eye",
+          icon: <FaRegEye />,
           extraClasses: "w-full justify-center md:w-auto",
           btnLink: "/marketplace",
         }}

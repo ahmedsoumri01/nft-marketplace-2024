@@ -2,7 +2,7 @@ import React from "react";
 import AuctionTimer from "./AuctionTimer";
 import Avatar from "@/components/Avatar";
 import Button from "@/components/buttons/Button";
-
+import { FaRegEye } from "react-icons/fa"; 
 const nftHighlight = {
   creatorName: "John Doe",
   creatorAvatar: "/assets/images/avatar1.png",
@@ -41,7 +41,7 @@ export default function HighlightSection() {
                isLink={true}
             href="/nft/76576GG87676D76C76D5C79S87C68S7C6"
               BtnStyle="simple"
-              icon="Eye"
+              icon={<FaRegEye />}
               text="See NFT"
               extraClasses="!rounded-xl w-full justify-center px-12 py-4 font-bold text-xl myt-4 md:w-auto md:px-8 md:py-2"
             />

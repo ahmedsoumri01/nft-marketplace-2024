@@ -1,4 +1,4 @@
-// components/Icon.tsx
+/* // components/Icon.tsx
 import Image from "next/image";
 
 type IconProps = {
@@ -55,3 +55,24 @@ export default function Icon({
 }: IconProps) {
   return <Image className={extraClasses} src={icons[name]} alt={alt} width={width} height={height} />;
 }
+ */
+
+// components/Icon.tsx
+import { FC, ReactElement } from "react";
+
+type IconProps = {
+  icon: ReactElement; // Pass the actual icon component as a prop
+  color?: string;
+  size?: number;
+  extraClasses?: string;
+};
+
+const Icon: FC<IconProps> = ({ icon, color = "currentColor", size = 24, extraClasses = "" }) => {
+  return (
+    <span className={`inline-flex items-center ${extraClasses}`} style={{ color, fontSize: size }}>
+      {icon}
+    </span>
+  );
+};
+
+export default Icon;

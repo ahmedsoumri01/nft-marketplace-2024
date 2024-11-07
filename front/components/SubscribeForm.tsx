@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from "@/components/buttons/Button";
+import { SlEnvolope } from "react-icons/sl";
 
  
 export default function SubscribeForm() {
@@ -16,7 +17,7 @@ export default function SubscribeForm() {
       styleType="secondary"
       extraClasses="rounded-lg w-full font-bold  flex items-center justify-center !rounded-full hover:!bg-[#6d39b0] lg:-ml-8 lg:w-[200px]"
       BtnStyle="simple"
-      icon="EnvelopeSimple"
+      icon={<SlEnvolope />}
     />
   </div></div>
   )

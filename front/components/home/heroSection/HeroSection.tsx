@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@/components/buttons/Button";
 import StatisticHeroBar from "@/components/StatisticHeroBar";
 import HighlightedNft from "@/components/home/heroSection/HighlightedNft";
+import { FaRocket } from "react-icons/fa";
 const heroStatistics = [
   {
     title: "Total Sale",
@@ -41,7 +42,7 @@ function HeroSection() {
           text="Get Started"
           styleType="secondary"
           BtnStyle="simple"
-          icon="RocketLaunch"
+          icon={<FaRocket />}
           extraClasses="w-full justify-center md:w-fit md:w-auto"
           isLink={true}
           href="/signup"

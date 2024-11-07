@@ -4,7 +4,8 @@ import React from "react";
 import Button from "@/components/buttons/Button";
 import NavMenuItem from "./NavMenuItem";
 import MobileNavMenu from "./MobileNavMenu";
-
+import { IoLogIn  } from "react-icons/io5";
+import { FaUser } from "react-icons/fa";
 const NavMenuItems = [
   {
     text: "Marketplace",
@@ -34,7 +35,7 @@ const NavMenu = () => {
           isLink={true}
           href="/login"
           text="login"
-          icon="User"
+          icon={<IoLogIn />}
           styleType="tertiary"
           BtnStyle="simple"
           extraClasses="w-full font-bold"
@@ -45,7 +46,7 @@ const NavMenu = () => {
           isLink={true}
           href="/signup"
           text="Sign Up"
-          icon="User"
+          icon={<FaUser />}
           styleType="tertiary"
           BtnStyle="inline"
           extraClasses="w-full font-bold"

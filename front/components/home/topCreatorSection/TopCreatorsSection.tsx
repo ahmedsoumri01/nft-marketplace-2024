@@ -1,6 +1,7 @@
 import React from "react";
 import SectionTitle from "@/components/home/SectionTitle";
 import CreatorItem from "@/components/home/topCreatorSection/CreatorItem";
+import { IoRocketOutline } from "react-icons/io5";
 const creatorsArray = [
   {
     creatorImage: "/assets/images/Avatar1.png",
@@ -53,7 +54,7 @@ function TopCreatorsSection() {
         buttonProps={{
           text: "View Rankings",
           styleType: "secondary",
-          icon: "RocketLaunch",
+          icon: <IoRocketOutline />,
           extraClasses: "w-full justify-center md:w-auto",
           btnLink: "/rankings",
         }}

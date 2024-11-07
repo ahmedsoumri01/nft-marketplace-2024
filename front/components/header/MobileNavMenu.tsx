@@ -4,7 +4,9 @@ import Icon from "@/components/Icons";
 import { IoClose } from "react-icons/io5";
 import MobileNavItem from "./MobileNavItem";
 import Button from "@/components/buttons/Button";
-
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { FaUser } from "react-icons/fa";
+import { IoLogInSharp } from "react-icons/io5";
 // props
 type Props = {
   NavMenuItems: Array<{ text: string; href: string }>;
@@ -30,7 +32,9 @@ const MobileNavMenu = ({ NavMenuItems }: Props) => {
             title="open menu"
             className="cursor-pointer"
           >
-            <Icon name="List" alt="Menu" width={35} height={35} />
+            <Icon 
+             icon={<HiOutlineMenuAlt2 />}
+            />
           </button>
         )}
       </div>
@@ -61,7 +65,7 @@ const MobileNavMenu = ({ NavMenuItems }: Props) => {
           isLink={true}
           href="/login"
           text="login"
-          icon="User"
+          icon={<IoLogInSharp  className="text-lg" /> }
           styleType="tertiary"
           BtnStyle="simple"
           extraClasses="w-full font-bold hover:text-black"
@@ -70,7 +74,7 @@ const MobileNavMenu = ({ NavMenuItems }: Props) => {
           isLink={true}
           href="/signup"
           text="Sign Up"
-          icon="User"
+          icon={<FaUser className="text-lg" /> }
           styleType="tertiary"
           BtnStyle="inline"
           extraClasses="w-full font-bold text-black"

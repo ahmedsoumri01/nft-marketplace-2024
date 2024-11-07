@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ReactElement } from "react";
 import Button from "@/components/buttons/Button";
 type Props = {
   title: string;
@@ -8,7 +8,7 @@ type Props = {
     text: string;
     styleType: "primary" | "secondary";
     btnLink: string;
-    icon: "RocketLaunch" | "ArrowRight" | "Eye";
+    icon: ReactElement;
     extraClasses: string;
   };
 };
