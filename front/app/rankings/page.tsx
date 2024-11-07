@@ -1,5 +1,5 @@
 import React from "react";
-import PageHeader from "@/components/rankings/PageHeader";
+import PageHeader from "@/components/PageHeader";
 import FilterBar from "@/components/rankings/FilterBar";
 import CreatorRankingItem from "@/components/rankings/CreatorRankingItem";
 const creators = [
