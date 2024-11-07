@@ -27,17 +27,20 @@ export default function FilterBar() {
         onClick={() => handleClick("NFTs")}
         className={`${
           selected === "NFTs" ? "text-white" : "text-captionLabel"
-        } w-full p-2 font-bold text-lg cursor-pointer text-captionLabel hover:text-callAction`}
+        } flex justify-center gap-4 items-center w-full p-2 font-bold text-lg cursor-pointer text-captionLabel hover:text-callAction`}
       >
-        <p className="hidden sm:block">NFTs</p>
+        <p>NFTs</p>
+        <p className="bg-captionLabel px-3 rounded-full text-sm text-white hover:text-white">302</p>
       </button>
       <button
         onClick={() => handleClick("Collections")}
         className={`${
           selected === "Collections" ? "text-white" : "text-captionLabel"
-        } w-full p-2 font-bold text-lg cursor-pointer text-captionLabel hover:text-callAction`}
+        } flex justify-center gap-4 items-center  w-full p-2 font-bold text-lg cursor-pointer text-captionLabel hover:text-callAction`}
       >
-        <p className="hidden sm:block">Collections</p>
+        <p>Collections</p>
+        <p className="bg-captionLabel px-3 rounded-full text-sm text-white hover:text-white">67</p>
+
       </button>
 
       {/* Bottom bar indicator */}
