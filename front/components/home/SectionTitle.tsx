@@ -7,7 +7,7 @@ type Props = {
   buttonProps?: {
     text: string;
     styleType: "primary" | "secondary";
-
+    btnLink: string;
     icon: "RocketLaunch" | "ArrowRight" | "Eye";
     extraClasses: string;
   };
@@ -18,6 +18,7 @@ const SectionTitle = ({
   description,
   sectionStyle,
   buttonProps,
+  
 }: Props) => {
   return (
     <div>
@@ -35,6 +36,8 @@ const SectionTitle = ({
                 BtnStyle="inline"
                 icon={buttonProps.icon}
                 extraClasses="w-full justify-center md:w-auto"
+                isLink={true}
+                href={buttonProps.btnLink}
               />
             )}
           </div>

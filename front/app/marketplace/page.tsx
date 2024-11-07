@@ -145,7 +145,7 @@ export default function Page() {
         pageDescription="Browse through more than 50k NFTs on the NFT Marketplace."
       />
 
-      <div>
+      <div >
         <SearchFilter />
       </div>
       <div className="px-4">

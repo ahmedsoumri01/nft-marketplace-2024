@@ -55,6 +55,7 @@ function TopCreatorsSection() {
           styleType: "secondary",
           icon: "RocketLaunch",
           extraClasses: "w-full justify-center md:w-auto",
+          btnLink: "/rankings",
         }}
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
