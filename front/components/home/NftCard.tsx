@@ -21,7 +21,7 @@ export default function NftCard({
   hiestBid,
 }: Props) {
   return (
-    <div className="group transition-all ease-in-out duration-300">
+    <div className="group transition-all ease-in-out duration-300"   data-aos="fade-right" data-aos-duration="2000">
       <div className="relative group">
         <Image
           width={200}

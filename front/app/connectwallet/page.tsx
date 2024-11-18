@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const waletImages = [
   "/assets/images/wallets/Coinbase.png",
@@ -34,6 +35,9 @@ export default function page() {
               <p>Connect your wallet</p>
             </div>
           </div>
+        </div>
+        <div>
+          <ConnectButton />
         </div>
       </div>
     </div>

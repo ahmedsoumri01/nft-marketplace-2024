@@ -34,7 +34,7 @@ function HeroSection() {
           NFT marketplace UI created with Anima for Figma. Collect, buy and sell
           art from more than 20k NFT artists.
         </h2>
-        <div className="md:hidden flex justify-center w-full p-4">
+        <div className="md:hidden flex justify-center w-full p-4" data-aos="fade-left">
           <HighlightedNft nft={highlightNft} />
         </div>
 

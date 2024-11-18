@@ -16,6 +16,8 @@ export default function HighlightSection() {
   return (
     <div
       className={`relative min-h-screen bg-[url('/assets/images/ScreenTablet.png')] bg-no-repeat bg-cover`}
+       data-aos="zoom-in"
+        data-aos-duration="2000"
     >
       {/* Blurred overlay with purple gradient shadow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-600 opacity-80 backdrop-blur-sm"></div>

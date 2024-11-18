@@ -4,7 +4,9 @@ import SubscribeForm from "@/components/SubscribeForm";
 const subscribeImage = "/assets/images/Photo.png";
 export default function SubscribeWidgetSection() {
   return (
-    <div className="container mx-auto p-6 sm:p-8">
+    <div className="container mx-auto p-6 sm:p-8" data-aos="fade-right"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine">
       <div className="block bg-backgroundSecondary rounded-2xl p-5 sm:p-9 md:flex gap-8 items-center justify-around content-center">
         <div className="flex justify-center items-center py-4">
           <Image

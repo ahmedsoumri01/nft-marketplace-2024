@@ -8,7 +8,10 @@ type Props = {
 
 export default function HowWorkItem({ image, title, description }: Props) {
   return (
-    <div className="flex items-center bg-backgroundSecondary transition-all ease-in-out duration-300 p-4 rounded-xl text-center md:block object-fill cursor-pointer hover:bg-callAction h-full">
+    <div
+    data-aos="zoom-in-right"
+     data-aos-duration="2000"
+    className="flex items-center bg-backgroundSecondary transition-all ease-in-out duration-300 p-4 rounded-xl text-center md:block object-fill cursor-pointer hover:bg-callAction h-full">
       <div className="flex justify-center items-center">
         <Image
           width={200}

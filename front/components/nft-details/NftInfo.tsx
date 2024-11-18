@@ -52,10 +52,12 @@ export default function NftInfo({
             <p className="text-captionLabel font-bold text-xl py-2">
               Created By
             </p>
-            <div className="flex items-center gap-3">
+            <Link
+            href={`/artist/${createdBy}`}
+            className="flex items-center gap-3 w-fit transition-all duration-200 ease-in-out hover:text-callAction ">
               <Avatar src={creatorImage} alt="creator" size="small" />
               <p className="font-bold text-lg">{createdBy}</p>
-            </div>
+            </Link>
           </div>
           <div className="py-6">
             <p className="text-captionLabel font-bold text-xl py-2">

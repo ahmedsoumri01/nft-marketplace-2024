@@ -13,7 +13,11 @@ export default function CategorieItem({
   categorieIcon,
 }: Readonly<Props>) {
   return (
-    <div className="rounded-xl overflow-hidden cursor-pointer group">
+    <div
+      className="rounded-xl overflow-hidden cursor-pointer group"
+      data-aos="fade-left"
+      data-aos-duration="2000"
+    >
       <div className="relative group">
         {/* Cover Image with hover blur effect */}
         <Image
@@ -23,7 +27,7 @@ export default function CategorieItem({
           alt={categorieName}
           className="w-full h-full object-cover group-hover:blur-sm transition duration-300"
         />
-        
+
         {/* Centered Icon */}
         <div className="absolute inset-0 flex justify-center items-center">
           <Image
