@@ -1,5 +1,3 @@
-import { act } from "react";
-
 export const artistData = {
   coverImage: "/assets/images/placeholders/ImagePlaceHolder(9).png",
   artistImage: "/assets/images/Avatar.png",
