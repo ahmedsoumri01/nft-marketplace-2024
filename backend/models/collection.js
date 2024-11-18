@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const CollectionSchema = new mongoose.Schema({
     name: { type: String, required: true },
     creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
@@ -9,3 +11,6 @@ const CollectionSchema = new mongoose.Schema({
     updatedAt: { type: Date, default: Date.now }
   }, { timestamps: true });
   
+
+const Collection = mongoose.model('Collection', CollectionSchema);
+module.exports = Collection;

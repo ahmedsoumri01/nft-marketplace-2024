@@ -1,3 +1,6 @@
+const mongoose = require("mongoose");
+
+
 const NFTSchema = new mongoose.Schema({
     name: { type: String, required: true },
     creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
@@ -34,3 +37,6 @@ const NFTSchema = new mongoose.Schema({
     updatedAt: { type: Date, default: Date.now }
   }, { timestamps: true });
   
+
+const NFT = mongoose.model('NFT', NFTSchema);
+module.exports = NFT;
