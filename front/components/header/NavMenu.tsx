@@ -4,8 +4,10 @@ import React from "react";
 import Button from "@/components/buttons/Button";
 import NavMenuItem from "./NavMenuItem";
 import MobileNavMenu from "./MobileNavMenu";
-import { IoLogIn  } from "react-icons/io5";
+import { IoLogIn } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/reduxStore";
 const NavMenuItems = [
   {
     text: "Marketplace",
@@ -22,6 +24,9 @@ const NavMenuItems = [
 ];
 
 const NavMenu = () => {
+  const { isLoggedIn, token } = useSelector((state: RootState) => state.auth);
+
+  console.log({ isLoggedIn, token });
   return (
     <div className="flex items-center gap-2">
       <div className="hidden gap-12 items-center font-bold lg:flex">
@@ -29,7 +34,9 @@ const NavMenu = () => {
           <NavMenuItem key={index} href={item.href} text={item.text} />
         ))}
       </div>
-    
+
+      {isLoggedIn ? "You are logged in" : "You are not logged in"}
+      {token && <div>Token: {token}</div>}
       <div className="hidden mx-2 lg:block">
         <Button
           isLink={true}
