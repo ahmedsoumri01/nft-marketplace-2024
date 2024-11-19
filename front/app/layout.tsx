@@ -8,6 +8,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./wagmiProviders";
 import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 import StoreProvider from "@/components/StoreProvider";
+
 export const metadata: Metadata = {
   title: "NFT Marketplace",
   description: "Buy and sell NFTs",
@@ -15,9 +16,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  readonly children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
@@ -25,11 +26,8 @@ export default function RootLayout({
         <StoreProvider>
           <Providers>
             <Header />
-
             {children}
-
             <Footer />
-
             <ScrollToTopBtn />
           </Providers>
         </StoreProvider>
