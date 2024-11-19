@@ -5,7 +5,7 @@ import authReducer from './features/auth/authSlice';
 
 // Persist configuration
 const persistConfig = {
-  key: 'auth', // Key to identify storage entry
+  key: 'auth', // Key to identify this persist entry in localStorage
   storage,
 };
 
@@ -13,22 +13,19 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, authReducer);
 
 // Create the Redux store
-export const makeStore = () => {
-  return configureStore({
-    reducer: {
-      auth: persistedReducer, // Use the persisted reducer
-    },
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({
-        serializableCheck: false, // Disable serializable checks for redux-persist
-      }),
-  });
-};
+export const store = configureStore({
+  reducer: {
+    auth: persistedReducer, // Use the persisted reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false, // Disable serializable checks for redux-persist
+    }),
+});
 
 // Create the persistor instance
-export const persistor = persistStore(makeStore());
+export const persistor = persistStore(store);
 
 // Types for Redux
-export type AppStore = ReturnType<typeof makeStore>;
-export type RootState = ReturnType<AppStore['getState']>;
-export type AppDispatch = AppStore['dispatch'];
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

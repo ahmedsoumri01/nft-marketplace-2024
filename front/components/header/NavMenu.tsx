@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/reduxStore";
 import { IoIosLogOut } from "react-icons/io";
 import { CiUser } from "react-icons/ci";
+import { logout } from "@/lib/features/auth/authSlice";
+import { useDispatch } from "react-redux";
 const NavMenuItems = [
   {
     text: "Marketplace",
@@ -28,7 +30,11 @@ const NavMenuItems = [
 const NavMenu = () => {
   const { isLoggedIn, token } = useSelector((state: RootState) => state.auth);
 
-  console.log({ isLoggedIn, token });
+ const dispatch = useDispatch();
+
+ const handleLogout = () => {
+    dispatch(logout());
+  }
   return (
     <div className="flex items-center gap-2">
       <div className="hidden gap-12 items-center font-bold lg:flex">
@@ -37,8 +43,7 @@ const NavMenu = () => {
         ))}
       </div>
 
-      {/*  {isLoggedIn ? "You are logged in" : "You are not logged in"}
-      {token && <div>Token: {token}</div>} */}
+ 
       {!isLoggedIn && !token && (
         <>
           <div className="hidden mx-2 lg:block">
@@ -81,8 +86,7 @@ const NavMenu = () => {
       {isLoggedIn && token && (
         <div className="hidden mx-2 lg:block">
           <Button
-            isLink={true}
-            href="/logout"
+          onClick = {handleLogout}
             text="Logout"
             styleType="tertiary"
             BtnStyle="simple"

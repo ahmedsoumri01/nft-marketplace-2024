@@ -7,7 +7,7 @@ import { useAccount } from "wagmi";
 import NavMenu from "./NavMenu";
 export default function Header() {
   const { isConnected } = useAccount();
-  console.log(isConnected);
+  console.log("wallet is connected " , isConnected);
   return (
     <div className="p-4 flex items-center justify-between">
       <Logo
