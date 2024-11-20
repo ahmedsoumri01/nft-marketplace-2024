@@ -89,6 +89,7 @@ export default function CompleteProfileForm() {
     setLoadCompleteProfile(true);
     try {
       await completeUserProfile(profileData);
+      await firstTimeLogin();
       setLoadCompleteProfile(false);
       push("/");
       toast.success("Profile setup completed successfully");

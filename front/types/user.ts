@@ -6,6 +6,8 @@ export type SocialLink = {
 export type UserData = {
   _id: string;
   bio: string;
+  avatar: string;
+  coverImage: string;
   email: string;
   username: string;
   followers: string[];

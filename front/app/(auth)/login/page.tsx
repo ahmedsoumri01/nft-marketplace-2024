@@ -45,7 +45,7 @@ export default function Page() {
             push("/admin/dashboard");
           } else if (user.firstTimeLogin) {
             push("/complete-profile");
-          } else if (!user.profileCompleted) {
+          } else if (user.profileCompleted === false) {
             push("/complete-profile");
           } else {
             push("/artist/my-profile");

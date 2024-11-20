@@ -35,14 +35,24 @@ export default function Page() {
   ) : (
     <div>
       <CoverImage
-        coverImage={artistData.coverImage}
-        artistImage={artistData.artistImage}
+        coverImage={
+          userData?.coverImage || artistData.coverImage
+        }
+        artistImage={
+          userData?.avatar || artistData.artistImage
+        }
       />
       <ArtistInfo
+        walletLinked={userData?.walletLinked || false} // Safely access walletLinked
+        myProfile={true} // Set myProfile to true
         artistName={userData?.username || ""} // Safely access name
         artistBio={userData?.bio || ""} // Safely access bio
         Links={userData?.socialLinks || []} // Safely access socialLinks
-        stats={artistData.stats}
+        stats={{
+          nfts: userData?.followers?.length || 0, // Safely access nfts
+          volume: userData?.followers?.length || 0, // Safely access volume
+          followers: userData?.followers?.length || 0, // Safely access
+        }}
       />
       <div className="border-t-2 border-backgroundSecondary p-2">
         <TabCard
