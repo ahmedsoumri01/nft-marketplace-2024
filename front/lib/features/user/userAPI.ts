@@ -7,3 +7,8 @@ export const firstTimeLogin = async () => {
 export const completeUserProfile = async (data: object) => {
   return axiosInstance.put(`/users/profile/update/completeUserProfile`, data);
 };
+
+//getUser
+export const getUser = async () => {
+  return axiosInstance.get(`/users/profile`);
+};

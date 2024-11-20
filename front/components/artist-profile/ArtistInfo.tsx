@@ -3,31 +3,28 @@ import Link from "next/link";
 import Button from "../buttons/Button";
 import { FiPlus } from "react-icons/fi";
 import { FaRegCopy } from "react-icons/fa";
+import { SocialLink } from "@/types"; // Import the SocialLink type
 import { CiTwitter } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
 import { RxDiscordLogo } from "react-icons/rx";
 import { FaInstagram } from "react-icons/fa";
-type props = {
+type Props = {
   artistName: string;
   artistBio: string;
-  Links: {
-    twitter: string;
-    instagram: string;
-    website: string;
-    discord: string;
-  };
+  Links: SocialLink[];
   stats: {
     followers: number;
     volume: number;
     nfts: number;
   };
 };
+
 export default function ArtistInfo({
-  artistName,
-  artistBio,
-  Links,
+  artistName = "Unknown Artist", // Default fallback
+  artistBio = "No bio available.",
+  Links = [], // Default to an empty array
   stats,
-}: props) {
+}: Props) {
   return (
     <div className="container mx-auto pt-20">
       <div className="items-center justify-between p-2 md:flex">
@@ -70,20 +67,40 @@ export default function ArtistInfo({
         <p className="text-lg">{artistBio}</p>
       </div>
       <div className="p-3">
-        <p className="text-captionLabel text-lg">Links</p>
+        {
+          //show links label if at least one link is present and is not empty
+          Links.filter((link) => link.link !== "").length > 0 && (
+            <p className="text-captionLabel text-lg">Links</p>
+          )
+        }
         <div className="flex items-center gap-5 text-2xl py-4">
-          <Link href={Links.twitter} className="transition-all duration-300 ease-in-out hover:text-callAction">
-            <CiTwitter />
-          </Link>
-          <Link href={Links.instagram} className="transition-all duration-300 ease-in-out hover:text-callAction">
-            <FaInstagram />
-          </Link>
-          <Link href={Links.website} className="transition-all duration-300 ease-in-out hover:text-callAction">
-            <TbWorld />
-          </Link>
-          <Link href={Links.discord} className="transition-all duration-300 ease-in-out hover:text-callAction">
-            <RxDiscordLogo />
-          </Link>
+          {
+            // Map over the Links array
+            Links.filter(
+              (link) => link.link !== "" // Filter out empty links
+            ).map((link, index) => (
+              <Link
+                key={index}
+                href={link.link}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-all duration-300 ease-in-out hover:text-callAction"
+              >
+                {
+                  // Check the platformName and render the appropriate icon
+                  link.platformName === "twitter" ? (
+                    <CiTwitter />
+                  ) : link.platformName === "instagram" ? (
+                    <FaInstagram />
+                  ) : link.platformName === "website" ? (
+                    <TbWorld />
+                  ) : link.platformName === "discord" ? (
+                    <RxDiscordLogo />
+                  ) : null
+                }
+              </Link>
+            ))
+          }
         </div>
       </div>
     </div>

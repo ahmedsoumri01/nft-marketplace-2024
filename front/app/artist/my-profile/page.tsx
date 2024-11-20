@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CoverImage from "@/components/artist-profile/CoverImage";
 import ArtistInfo from "@/components/artist-profile/ArtistInfo";
 import TabCard from "@/components/artist-profile/TabCard";
@@ -7,20 +7,41 @@ import { artistData } from "@/utils/StaticData";
 import { DiscoveredNFTs, TrendingCollectionsArray } from "@/utils/StaticData";
 import NftCard from "@/components/home/NftCard";
 import TrendingCollectionCard from "@/components/home/TrendingCollectionCard";
-
+import { getUser } from "@/lib/features/user/userAPI";
+import Spinner from "@/components/Spinner";
+import { UserData } from "@/types"; // Import the UserData type
 export default function Page() {
-  const [selected, setSelected] = React.useState("Created");
+  const [selected, setSelected] = useState("Created");
+  const [userData, setUserData] = useState<UserData | null>(null); // Use the UserData type
+  const [loading, setLoading] = useState(true);
 
-  return (
+  const fetchUserData = async () => {
+    try {
+      const response = await getUser();
+      setUserData(response.data.user);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  console.log(userData);
+  return loading ? (
+    <Spinner white={true} size="large" />
+  ) : (
     <div>
       <CoverImage
         coverImage={artistData.coverImage}
         artistImage={artistData.artistImage}
       />
       <ArtistInfo
-        artistName={artistData.artistName}
-        artistBio={artistData.artistBio}
-        Links={artistData.Links}
+        artistName={userData?.username || ""} // Safely access name
+        artistBio={userData?.bio || ""} // Safely access bio
+        Links={userData?.socialLinks || []} // Safely access socialLinks
         stats={artistData.stats}
       />
       <div className="border-t-2 border-backgroundSecondary p-2">

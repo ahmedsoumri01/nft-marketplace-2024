@@ -14,11 +14,11 @@ import { TbWorld } from "react-icons/tb";
 import { LuUpload } from "react-icons/lu";
 import Avatar from "../Avatar";
 import Button from "@/components/buttons/Button";
-import { firstTimeLogin } from "@/lib/features/user/authAPI";
+import { firstTimeLogin } from "@/lib/features/user/userAPI";
 import Spinner from "@/components/Spinner";
 import { toast } from "react-toastify";
 import { isValidLink } from "@/utils/utils";
-import { completeUserProfile } from "@/lib/features/user/authAPI";
+import { completeUserProfile } from "@/lib/features/user/userAPI";
 export default function CompleteProfileForm() {
   const [bio, setBio] = useState("");
   const { push } = useRouter();
