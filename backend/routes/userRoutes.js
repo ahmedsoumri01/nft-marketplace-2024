@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getUser,updateUserBio,updateUsername,updateSocialLinks,firstTimeLogin } = require('../controllers/User/userController');
+const { getUser,updateUserBio,updateUsername,updateSocialLinks,firstTimeLogin,completeUserProfile } = require('../controllers/User/userController');
 const authMiddleware = require('../middleware/authMiddleware');
 
 // @route   GET api/user
@@ -27,6 +27,12 @@ router.put('/profile/update/socialLinks',authMiddleware, updateSocialLinks);
 // @desc    Update firstTimeLogin
 // @access  Private
 router.put('/profile/update/firstTimeLogin',authMiddleware, firstTimeLogin);
+
+ 
+// @route   PUT api/user/completeUserProfile
+// @desc    Update completeUserProfile
+// @access  Private
+router.put('/profile/update/completeUserProfile',authMiddleware, completeUserProfile);
 
 
 module.exports = router;
