@@ -37,6 +37,7 @@ export default function Page() {
 
           setLoading(false);
           const user = extractUserObjectFromToken(res.token);
+
           //empty the fields
           setEmail("");
           setPassword("");
@@ -44,10 +45,10 @@ export default function Page() {
             push("/admin/dashboard");
           } else if (user.firstTimeLogin) {
             push("/complete-profile");
-          } else if (user.profileCompleted) {
+          } else if (!user.profileCompleted) {
             push("/complete-profile");
           } else {
-            push("/artist/dashboard/profile");
+            push("/artist/my-profile");
           }
         } else {
           toast.error(

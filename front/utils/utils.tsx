@@ -27,7 +27,10 @@ export const doPasswordsMatch = (password: string, confirmPassword: string) => {
 export const isValidUsername = (username: string) => {
   return username.length >= 6;
 };
-
+//is Link 
+export const isValidLink = (link: string) => {
+  return /^(ftp|http|https):\/\/[^ "]+$/.test(link);
+};
 //valid password contain at least 1 uppercase, 1 lowercase, 1 number, 1 special character and 8 characters minimum
 export const isValidPasswordComplexity = (password: string) => {
   return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);

@@ -8,7 +8,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./wagmiProviders";
 import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 import StoreProvider from "@/components/StoreProvider";
-
+import WelcomeFirstTime from "@/components/header/WelcomeFirstTime";
 export const metadata: Metadata = {
   title: "NFT Marketplace",
   description: "Buy and sell NFTs",
@@ -25,6 +25,7 @@ export default function RootLayout({
         <ToastContainer />
         <StoreProvider>
           <Providers>
+            <WelcomeFirstTime />
             <Header />
             {children}
             <Footer />
