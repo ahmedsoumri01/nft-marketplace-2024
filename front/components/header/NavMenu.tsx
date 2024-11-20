@@ -78,7 +78,7 @@ const NavMenu = () => {
         <div className="hidden mx-2 lg:block">
           <Button
             isLink={true}
-            href="/profile"
+            href="/artist/my-profile"
             text="Profile"
             styleType="tertiary"
             icon={<CiUser  />}
