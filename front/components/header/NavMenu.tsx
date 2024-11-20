@@ -1,6 +1,8 @@
 // NavMenu.tsx
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
+
 import Button from "@/components/buttons/Button";
 import NavMenuItem from "./NavMenuItem";
 import MobileNavMenu from "./MobileNavMenu";
@@ -29,11 +31,13 @@ const NavMenuItems = [
 
 const NavMenu = () => {
   const { isLoggedIn, token } = useSelector((state: RootState) => state.auth);
+  const { push } = useRouter();
 
  const dispatch = useDispatch();
 
  const handleLogout = () => {
     dispatch(logout());
+    push("/");
   }
   return (
     <div className="flex items-center gap-2">

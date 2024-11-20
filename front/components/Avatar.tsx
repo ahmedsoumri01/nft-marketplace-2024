@@ -13,7 +13,7 @@ const Avatar = (props: Props) => {
       <Image
       width={200}
       height={200}
-        src={props.src || "/assets/images/Avatar#1.png"}
+        src={props.src || "/assets/images/Avatar1.png"}
         alt={props.alt}
         className={`rounded-full ${
           props.size === "small"
