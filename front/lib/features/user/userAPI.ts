@@ -1,4 +1,5 @@
 import axiosInstance from "@/lib/features/axiosInstance";
+import { SocialLink } from "@/types";
 //firstTimeLogin
 export const firstTimeLogin = async () => {
   return axiosInstance.put(`/users/profile/update/firstTimeLogin`);
@@ -20,4 +21,9 @@ export const updateUserBio = async (bio: string) => {
 //updateUsername
 export const updateUsername = async (username: string) => {
   return axiosInstance.put(`/users/profile/update/username`, { username });
+};
+
+//updateSocialLinks
+export const updateSocialLinks = async (links: object) => {
+  return axiosInstance.put(`/users/profile/update/socialLinks`, links);
 };

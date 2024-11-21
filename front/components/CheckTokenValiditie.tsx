@@ -14,6 +14,7 @@ export default function CheckTokenValiditie() {
   useEffect(() => {
     if (isLoggedIn && token && isTokenExpired(token)) {
       dispatch(logout());
+      window.location.href = "/";
     }
   }, []);
   return <div></div>;

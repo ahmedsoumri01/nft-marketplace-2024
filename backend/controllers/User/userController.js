@@ -76,6 +76,8 @@ exports.updateSocialLinks = async (req, res) => {
   try {
     const { socialLinks } = req.body;
     const userId = getUserID(req);
+    console.log({socialLinks});
+    console.log({reqBody:req.body});
 
     // Find the user by ID and update the socialLinks
     const user = await User.findByIdAndUpdate(

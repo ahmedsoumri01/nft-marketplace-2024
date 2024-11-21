@@ -49,9 +49,9 @@ export const isTokenExpired = (token: string): boolean => {
 
 //get token from redux store
 
-export const extractUserObjectFromToken = (token: string): any | null => {
+export const extractUserObjectFromToken = (token: string): object | null => {
   try {
-    const decoded: { user?: any } = jwtDecode(token); // Explicit type for decoded object
+    const decoded: { user?: object } = jwtDecode(token); // Explicit type for decoded object
     return decoded?.user ?? null; // Return user if it exists, otherwise return null
   } catch (error) {
     console.error("Error decoding token:", error);

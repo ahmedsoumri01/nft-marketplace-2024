@@ -11,7 +11,11 @@ type Props = {
   fetchUserData: () => void;
 };
 
-export default function ArtistBio({ artistBio, myProfile,fetchUserData }: Props) {
+export default function ArtistBio({
+  artistBio,
+  myProfile,
+  fetchUserData,
+}: Props) {
   const [editBio, setEditBio] = useState(false);
   const [newBio, setNewBio] = useState(artistBio);
   const [loading, setLoading] = useState(false);
@@ -54,19 +58,17 @@ export default function ArtistBio({ artistBio, myProfile,fetchUserData }: Props)
         {myProfile &&
           (editBio ? (
             <div
-              className={`hidden absolute top-4 left-16  group-hover:block transition-all  ease-in-out duration-200 ${
-                editBio ? "block" : "hidden"
-              }`}
+              className={`absolute top-4 left-16  group-hover:block transition-all  ease-in-out duration-200`}
             >
               <button
                 onClick={saveBio}
-                className="mr-2  bg-callAction p-2 rounded-full border-2 transition-all bg-green-500 ease-in-out duration-200 hover:bg-green-600"
+                className="mr-2 p-2 rounded-full border-2 transition-all bg-green-500 ease-in-out duration-200 hover:bg-green-600"
                 title="Save Bio"
               >
                 <MdDoneOutline />
               </button>
               <button
-                className="mr-2  bg-callAction p-2 rounded-full border-2 transition-all bg-red-500 ease-in-out duration-200 hover:bg-red-600"
+                className="mr-2 p-2 rounded-full border-2 transition-all bg-red-500 ease-in-out duration-200 hover:bg-red-600"
                 onClick={() => setEditBio(false)}
                 title="cancel"
               >
@@ -77,7 +79,7 @@ export default function ArtistBio({ artistBio, myProfile,fetchUserData }: Props)
             <button
               onClick={() => setEditBio(true)}
               title="Edit Bio"
-              className="hidden absolute bg-callAction p-2 rounded-full border-2 top-4 left-20 transition-all ease-in-out duration-200  group-hover:block"
+              className="hidden absolute bg-callAction p-2 rounded-full border-2 top-4 left-20 transition-all ease-in-out duration-200  group-hover:block hover:bg-purple-800"
             >
               <FaEdit />
             </button>

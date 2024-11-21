@@ -66,19 +66,17 @@ export default function ArtistnameAndWalet({
           {myProfile &&
             (EditUserName ? (
               <div
-                className={`hidden absolute top-0 right-0  group-hover:block transition-all  ease-in-out duration-200 ${
-                  EditUserName ? "block" : "hidden"
-                }`}
+                className={`absolute top-0 right-0  group-hover:block transition-all  ease-in-out duration-200`}
               >
                 <button
                   onClick={saveUserName}
-                  className="mr-2  bg-callAction p-2 rounded-full border-2 transition-all bg-green-500 ease-in-out duration-200 hover:bg-green-600"
+                  className="mr-2  p-2 rounded-full border-2 transition-all bg-green-500 ease-in-out duration-200 hover:bg-green-600"
                   title="Save Bio"
                 >
                   <MdDoneOutline />
                 </button>
                 <button
-                  className="mr-2  bg-callAction p-2 rounded-full border-2 transition-all bg-red-500 ease-in-out duration-200 hover:bg-red-600"
+                  className="mr-2 p-2 rounded-full border-2 transition-all bg-red-500 ease-in-out duration-200 hover:bg-red-600"
                   onClick={() => setEditUserName(false)}
                   title="cancel"
                 >
@@ -89,7 +87,7 @@ export default function ArtistnameAndWalet({
               <button
                 onClick={() => setEditUserName(true)}
                 title="Edit Bio"
-                className="hidden absolute bg-callAction p-2 rounded-full border-2 top-0 right-0 transition-all ease-in-out duration-200  group-hover:block"
+                className="hidden absolute bg-callAction p-2 rounded-full border-2 top-0 right-0 transition-all ease-in-out duration-200  group-hover:block hover:bg-purple-800"
               >
                 <FaEdit />
               </button>
