@@ -1,6 +1,5 @@
 import { jwtDecode } from "jwt-decode";
 
-//form date from "2021-09-01T00:00:00.000Z" to  Sep 30, 2022
 
 export const fromISODate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", {
@@ -27,7 +26,7 @@ export const doPasswordsMatch = (password: string, confirmPassword: string) => {
 export const isValidUsername = (username: string) => {
   return username.length >= 6;
 };
-//is Link 
+//is Link
 export const isValidLink = (link: string) => {
   return /^(ftp|http|https):\/\/[^ "]+$/.test(link);
 };
@@ -38,7 +37,7 @@ export const isValidPasswordComplexity = (password: string) => {
 export const isTokenExpired = (token: string): boolean => {
   try {
     const decoded: { exp?: number } = jwtDecode(token); // Add type annotation for clarity
-    if (!decoded || typeof decoded.exp !== 'number') {
+    if (!decoded || typeof decoded.exp !== "number") {
       return true; // If `decoded` or `decoded.exp` is not valid, assume the token is expired
     }
     return Date.now() >= decoded.exp * 1000; // Compare with the current timestamp
@@ -48,6 +47,7 @@ export const isTokenExpired = (token: string): boolean => {
   }
 };
 
+//get token from redux store
 
 export const extractUserObjectFromToken = (token: string): any | null => {
   try {
@@ -59,3 +59,4 @@ export const extractUserObjectFromToken = (token: string): any | null => {
   }
 };
 
+ 

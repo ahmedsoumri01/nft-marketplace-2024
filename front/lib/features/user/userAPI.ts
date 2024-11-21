@@ -12,3 +12,12 @@ export const completeUserProfile = async (data: object) => {
 export const getUser = async () => {
   return axiosInstance.get(`/users/profile`);
 };
+
+//updateUserBio
+export const updateUserBio = async (bio: string) => {
+  return axiosInstance.put(`/users/profile/update/bio`, { bio });
+};
+//updateUsername
+export const updateUsername = async (username: string) => {
+  return axiosInstance.put(`/users/profile/update/username`, { username });
+};
