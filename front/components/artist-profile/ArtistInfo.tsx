@@ -11,7 +11,7 @@ type Props = {
   myProfile: boolean;
   fetchUserData: () => void; // Add the fetchUserData function
   walletLinked: boolean;
-  Links: SocialLink[];
+  Links: SocialLink[]; // Correct type
   stats: {
     nfts: number;
     volume: number;

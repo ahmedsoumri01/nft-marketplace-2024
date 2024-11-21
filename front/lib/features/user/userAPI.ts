@@ -26,3 +26,7 @@ export const updateUsername = async (username: string) => {
 export const updateSocialLinks = async (links: object) => {
   return axiosInstance.put(`/users/profile/update/socialLinks`, links);
 };
+//getArtistProfile
+export const getArtistProfile = async (id: string) => {
+  return axiosInstance.get(`/users/artist/${id}`);
+};

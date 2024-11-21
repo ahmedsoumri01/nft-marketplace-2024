@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import CoverImage from "@/components/artist-profile/CoverImage";
 import ArtistInfo from "@/components/artist-profile/ArtistInfo";
@@ -8,23 +8,56 @@ import { artistData } from "@/utils/StaticData";
 import { DiscoveredNFTs, TrendingCollectionsArray } from "@/utils/StaticData";
 import NftCard from "@/components/home/NftCard";
 import TrendingCollectionCard from "@/components/home/TrendingCollectionCard";
-
+ import { getArtistProfile } from "@/lib/features/user/userAPI";
+import Spinner from "@/components/Spinner";
+import { UserData } from "@/types"; // Import the UserData type
 export default function Page() {
   const { id } = useParams();
+  if (typeof id !== "string") {
+    throw new Error("Invalid artist ID");
+  }
+  const [userData, setUserData] = useState<UserData | null>(null); // Use the UserData type
+  const [loading, setLoading] = useState(true);
   const [selected, setSelected] = React.useState("Created");
 
-  return (
+  const fetchUserData = async () => {
+    try {
+      setLoading(true);
+      await getArtistProfile(id).then((response) => {
+        console.log(response.data.user);
+        setUserData(response.data.user);
+        setLoading(false);
+      });
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, [id]);
+  return loading ? (
+    <Spinner white={true} size="large" />
+  ) : (
     <div>
       <div className="bg-red-800">The ID of this artist is {id}</div>
       <CoverImage
-        coverImage={artistData.coverImage}
-        artistImage={artistData.artistImage}
+        coverImage={userData?.coverImage || artistData.coverImage}
+        artistImage={userData?.avatar || artistData.artistImage}
       />
       <ArtistInfo
-        artistName={artistData.artistName}
-        artistBio={artistData.artistBio}
-        Links={artistData.Links}
-        stats={artistData.stats}
+        artistName={userData?.username || ""} // Safely access name
+        artistBio={userData?.bio || ""} // Safely access bio
+        Links={userData?.socialLinks || []} // Safely access socialLinks
+        stats={{
+          nfts: userData?.followers?.length || 0, // Safely access nfts
+          volume: userData?.followers?.length || 0, // Safely access volume
+          followers: userData?.followers?.length || 0, // Safely access
+        }}
+        myProfile={false}
+        fetchUserData={fetchUserData}
+        walletLinked={false}
       />
       <div className="border-t-2 border-backgroundSecondary p-2">
         <TabCard

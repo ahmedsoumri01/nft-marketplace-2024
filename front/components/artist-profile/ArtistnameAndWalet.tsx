@@ -103,7 +103,7 @@ export default function ArtistnameAndWalet({
               extraClasses="font-bold"
               icon={<FaRegCopy />}
             />
-          ) : (
+          ) : myProfile ? (
             <Button
               text="Link Wallet"
               isLink={false}
@@ -112,6 +112,8 @@ export default function ArtistnameAndWalet({
               extraClasses="font-bold"
               icon={<FaWallet />}
             />
+          ) : (
+             <></>
           )}
 
           {!myProfile && (

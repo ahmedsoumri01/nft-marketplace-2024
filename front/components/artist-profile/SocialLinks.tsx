@@ -11,13 +11,12 @@ import { MdCancel } from "react-icons/md";
 import { updateSocialLinks } from "@/lib/features/user/userAPI";
 import Spinner from "../Spinner";
 import { toast } from "react-toastify";
+import { SocialLink } from "@/types";
+
 type Props = {
   fetchUserData: () => void; // Add the fetchUserData function
   myProfile: boolean;
-  Links: {
-    platformName: string;
-    link: string;
-  }[];
+  Links: SocialLink[];
 };
 
 export default function SocialLinks({

@@ -1,8 +1,8 @@
 export type SocialLink = {
   platformName: string;
   link: string;
-  _id: string;
 };
+
 export type UserData = {
   _id: string;
   bio: string;

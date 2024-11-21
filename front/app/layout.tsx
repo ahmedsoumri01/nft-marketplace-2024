@@ -10,6 +10,7 @@ import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 import StoreProvider from "@/components/StoreProvider";
 import WelcomeFirstTime from "@/components/header/WelcomeFirstTime";
 import CheckTokenValiditie from "@/components/CheckTokenValiditie";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata: Metadata = {
   title: "NFT Marketplace",
   description: "Buy and sell NFTs",
@@ -30,6 +31,7 @@ export default function RootLayout({
             <WelcomeFirstTime />
             <Header />
             {children}
+            <SpeedInsights />
             <Footer />
             <ScrollToTopBtn />
           </Providers>
