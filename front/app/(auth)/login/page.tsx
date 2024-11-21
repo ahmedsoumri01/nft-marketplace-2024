@@ -18,6 +18,12 @@ export default function Page() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { push } = useRouter();
+  interface User {
+    role?: string;
+    firstTimeLogin?: boolean;
+    profileCompleted?: boolean;
+  }
+
   const handleLogin = async () => {
     if (!isValidEmail(email)) {
       toast.error("Please enter a valid email address.");
@@ -36,19 +42,21 @@ export default function Page() {
           dispatch(login({ token: res.token }));
 
           setLoading(false);
-          const user = extractUserObjectFromToken(res.token);
+          const user: User | null = extractUserObjectFromToken(res.token);
 
           //empty the fields
           setEmail("");
           setPassword("");
-          if (user.role === "admin") {
-            push("/admin/dashboard");
-          } else if (user.firstTimeLogin) {
-            push("/complete-profile");
-          } else if (user.profileCompleted === false) {
-            push("/complete-profile");
-          } else {
-            push("/artist/my-profile");
+          if (user !== null) {
+            if (user.role === "admin") {
+              push("/admin/dashboard");
+            } else if (user.firstTimeLogin) {
+              push("/complete-profile");
+            } else if (user.profileCompleted === false) {
+              push("/complete-profile");
+            } else {
+              push("/artist/my-profile");
+            }
           }
         } else {
           toast.error(

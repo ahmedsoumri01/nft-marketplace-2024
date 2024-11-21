@@ -16,6 +16,10 @@ export default function CheckTokenValiditie() {
       dispatch(logout());
       window.location.href = "/";
     }
-  }, []);
+  }, [
+    isLoggedIn,
+    token,
+    dispatch,
+  ]);
   return <div></div>;
 }

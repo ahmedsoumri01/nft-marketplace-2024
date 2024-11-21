@@ -1,5 +1,4 @@
 import axiosInstance from "@/lib/features/axiosInstance";
-import { SocialLink } from "@/types";
 //firstTimeLogin
 export const firstTimeLogin = async () => {
   return axiosInstance.put(`/users/profile/update/firstTimeLogin`);
