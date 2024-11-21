@@ -34,6 +34,8 @@ exports.register = async (req, res) => {
       username,
       email,
       password,
+      avatar:"",
+      coverImage:"",
     });
 
     return res

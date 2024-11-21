@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = process.env; // Ensure this is set in your environment variables.
 
 const algorithm = "aes-256-cbc";
 const key = Buffer.from(process.env.ENCRYPTION_KEY, "hex"); // Store a 32-byte hex key in your environment variables
@@ -21,4 +22,19 @@ exports.decrypt = (encryptedText) => {
   return decrypted;
 };
 
- 
+//get userID from token in header
+exports.getUserID = (req) => {
+  // Get the token from the Authorization header
+  const authHeader = req.header("Authorization");
+
+  // Check if the Authorization header exists and follows the Bearer format
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "No token, authorization denied" });
+  }
+  // Extract the token from the Bearer scheme
+  const token = authHeader.split(" ")[1];
+  // Verify the token and decode it
+  const decoded = jwt.verify(token, JWT_SECRET);
+
+  return decoded.user.id;
+};

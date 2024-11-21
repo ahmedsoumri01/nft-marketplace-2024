@@ -1,26 +1,12 @@
 const jwt = require("jsonwebtoken");
 const User = require("../../models/User");
 const { JWT_SECRET } = process.env; // Ensure this is set in your environment variables.
-
+const { getUserID } = require("../../utils/utils");
 // Function to get user information from the Bearer token
 exports.getUser = async (req, res) => {
-  // Get the token from the Authorization header
-  const authHeader = req.header("Authorization");
-
-  // Check if the Authorization header exists and follows the Bearer format
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({ message: "No token, authorization denied" });
-  }
-
-  // Extract the token from the Bearer scheme
-  const token = authHeader.split(" ")[1];
-
   try {
-    // Verify the token and decode it
-    const decoded = jwt.verify(token, JWT_SECRET);
-
     // Extract the user ID from the decoded token
-    const userId = decoded.user.id;
+    const userId = getUserID(req);
 
     // Fetch the user from the database
     const user = await User.findById(userId).select("-password"); // Exclude the password from the response
@@ -41,7 +27,7 @@ exports.getUser = async (req, res) => {
 exports.updateUserBio = async (req, res) => {
   try {
     const { bio } = req.body;
-    const userId = req.user.id;
+    const userId = getUserID(req);
 
     // Find the user by ID and update the bio
     const user = await User.findByIdAndUpdate(
@@ -65,7 +51,7 @@ exports.updateUserBio = async (req, res) => {
 exports.updateUsername = async (req, res) => {
   try {
     const { username } = req.body;
-    const userId = req.user.id;
+    const userId = getUserID(req);
 
     // Find the user by ID and update the username
     const user = await User.findByIdAndUpdate(
@@ -89,7 +75,7 @@ exports.updateUsername = async (req, res) => {
 exports.updateSocialLinks = async (req, res) => {
   try {
     const { socialLinks } = req.body;
-    const userId = req.user.id;
+    const userId = getUserID(req);
 
     // Find the user by ID and update the socialLinks
     const user = await User.findByIdAndUpdate(
@@ -111,22 +97,9 @@ exports.updateSocialLinks = async (req, res) => {
 
 // fisrt time login use the token and extract the user if from it
 exports.firstTimeLogin = async (req, res) => {
-  // Get the token from the Authorization header
-  const authHeader = req.header("Authorization");
-
-  // Check if the Authorization header exists and follows the Bearer format
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({ message: "No token, authorization denied" });
-  }
-  // Extract the token from the Bearer scheme
-  const token = authHeader.split(" ")[1];
-
   try {
-    // Verify the token and decode it
-    const decoded = jwt.verify(token, JWT_SECRET);
-
     // Extract the user ID from the decoded token
-    const userId = decoded.user.id;
+    const userId = getUserID(req);
 
     // Find the user by ID and update the firstTimeLogin field
     const user = await User.findByIdAndUpdate(
@@ -148,22 +121,9 @@ exports.firstTimeLogin = async (req, res) => {
 
 //complete user profile by put bio,socialLinks and avatar if exists and use the token to extract the user id
 exports.completeUserProfile = async (req, res) => {
-  // Get the token from the Authorization header
-  const authHeader = req.header("Authorization");
-
-  // Check if the Authorization header exists and follows the Bearer format
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({ message: "No token, authorization denied" });
-  }
-  // Extract the token from the Bearer scheme
-  const token = authHeader.split(" ")[1];
-
   try {
-    // Verify the token and decode it
-    const decoded = jwt.verify(token, JWT_SECRET);
-
     // Extract the user ID from the decoded token
-    const userId = decoded.user.id;
+    const userId = getUserID(req);
 
     const { bio, socialLinks, avatar } = req.body;
 

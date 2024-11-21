@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema(
   {
     name: { type: String },
     avatar: String,
+    coverImage: String,
     bio: String,
     socialLinks: [
       {
