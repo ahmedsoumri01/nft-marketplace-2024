@@ -9,6 +9,7 @@ import { Providers } from "./wagmiProviders";
 import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 import StoreProvider from "@/components/StoreProvider";
 import WelcomeFirstTime from "@/components/header/WelcomeFirstTime";
+import CheckTokenValiditie from "@/components/CheckTokenValiditie";
 export const metadata: Metadata = {
   title: "NFT Marketplace",
   description: "Buy and sell NFTs",
@@ -19,12 +20,13 @@ export default function RootLayout({
 }: {
   readonly children: React.ReactNode;
 }) {
-  return (
+   return (
     <html lang="en">
       <body>
         <ToastContainer />
         <StoreProvider>
           <Providers>
+            <CheckTokenValiditie />
             <WelcomeFirstTime />
             <Header />
             {children}

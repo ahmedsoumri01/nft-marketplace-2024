@@ -53,6 +53,7 @@ export default function Page() {
           volume: userData?.followers?.length || 0, // Safely access volume
           followers: userData?.followers?.length || 0, // Safely access
         }}
+        fetchUserData={fetchUserData} // Pass the fetchUserData function
       />
       <div className="border-t-2 border-backgroundSecondary p-2">
         <TabCard
@@ -64,30 +65,32 @@ export default function Page() {
         />
       </div>
       <div className="p-4 container mx-auto">
-        {selected === "Created" ? (
+        {selected === "Created" && (
           <div className="px-8 py-8 pt-12  gap-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {DiscoveredNFTs.map((nft, index) => (
               <NftCard
-                key={index}
-                nftImage={nft.nftImage}
-                nftName={nft.nftName}
-                nftPrice={nft.nftPrice}
-                nftOwner={nft.nftOwner}
-                nftOwnerAvatar={nft.nftOwnerAvatar}
-                hiestBid={nft.hiestBid}
+          key={index}
+          nftImage={nft.nftImage}
+          nftName={nft.nftName}
+          nftPrice={nft.nftPrice}
+          nftOwner={nft.nftOwner}
+          nftOwnerAvatar={nft.nftOwnerAvatar}
+          hiestBid={nft.hiestBid}
               />
             ))}
           </div>
-        ) : selected === "Owned" ? null : (
+        )}
+        {selected === "Owned" && null}
+        {selected === "Collections" && (
           <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-stretch gap-9 mt-8">
             {TrendingCollectionsArray.map((collection, index) => (
               <div key={index} className="w-full">
-                <TrendingCollectionCard
-                  ownerName={collection.ownerName}
-                  ownerImage={collection.ownerImage}
-                  collectionName={collection.collectionName}
-                  images={collection.images}
-                />
+          <TrendingCollectionCard
+            ownerName={collection.ownerName}
+            ownerImage={collection.ownerImage}
+            collectionName={collection.collectionName}
+            images={collection.images}
+          />
               </div>
             ))}
           </div>

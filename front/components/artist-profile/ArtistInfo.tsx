@@ -1,18 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import Button from "../buttons/Button";
-import { FiPlus } from "react-icons/fi";
-import { FaRegCopy } from "react-icons/fa";
+
 import { SocialLink } from "@/types"; // Import the SocialLink type
 import { CiTwitter } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
 import { RxDiscordLogo } from "react-icons/rx";
 import { FaInstagram } from "react-icons/fa";
-import { FaWallet } from "react-icons/fa";
+import ArtistBio from "@/components/artist-profile/ArtistBio";
+import ArtistnameAndWalet from "@/components/artist-profile/ArtistnameAndWalet.tsx";
 type Props = {
   artistName: string;
   artistBio: string;
   myProfile: boolean;
+  fetchUserData: () => void; // Add the fetchUserData function
   walletLinked: boolean;
   Links: SocialLink[];
   stats: {
@@ -26,46 +26,20 @@ export default function ArtistInfo({
   artistName = "Unknown Artist", // Default fallback
   artistBio = "No bio available.",
   Links = [], // Default to an empty array
+  fetchUserData,
   stats,
   walletLinked = false,
   myProfile = false,
 }: Props) {
   return (
     <div className="container mx-auto pt-20">
-      <div className="items-center justify-between p-2 md:flex">
-        <h1 className="text-6xl font-bold">{artistName}</h1>
-        <div className="flex items-center gap-4">
-          {walletLinked ? (
-            <Button
-              text="0xc0E3...B79C"
-              isLink={false}
-              styleType="secondary"
-              BtnStyle="simple"
-              extraClasses="font-bold"
-              icon={<FaRegCopy />}
-            />
-          ) : (
-            <Button
-              text="Link Wallet"
-              isLink={false}
-              styleType="secondary"
-              BtnStyle="simple"
-              extraClasses="font-bold"
-              icon={<FaWallet />}
-            />
-          )}
-
-          {!myProfile && (
-            <Button
-              text="Follow"
-              isLink={false}
-              styleType="secondary"
-              BtnStyle="inline"
-              extraClasses="font-bold"
-              icon={<FiPlus />}
-            />
-          )}
-        </div>
+      <div>
+        <ArtistnameAndWalet
+          artistName={artistName}
+          walletLinked={walletLinked}
+          myProfile={myProfile}
+          fetchUserData={fetchUserData}
+        />
       </div>
       <div className="flex items-center p-4 justify-between py-8 lg:w-1/3">
         <div>
@@ -81,14 +55,18 @@ export default function ArtistInfo({
           <p className="text-lg">Followers</p>
         </div>
       </div>
-      <div className="p-4">
-        <p className="text-captionLabel text-lg">Bio</p>
-        <p className="text-lg">{artistBio}</p>
+
+      <div>
+        <ArtistBio
+          artistBio={artistBio}
+          myProfile={myProfile}
+          fetchUserData={fetchUserData}
+        />
       </div>
       <div className="p-3">
         {
           //show links label if at least one link is present and is not empty
-          Links.filter((link) => link.link !== "").length > 0 && (
+          Links?.filter((link) => link.link !== "").length > 0 && (
             <p className="text-captionLabel text-lg">Links</p>
           )
         }
